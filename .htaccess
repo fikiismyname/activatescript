@@ -1,0 +1,17 @@
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^keluar?$ ./module/keluar/execute.php
+
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost/ [NC] 
+
+<Files "script.js">
+AddType application/x-httpd-php .js
+</Files>
+
+<IfModule mod_headers.c>
+	<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+		Header set Cache-Control "max-age=604800, public"
+	</FilesMatch>
+</IfModule>

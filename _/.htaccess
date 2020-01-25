@@ -1,0 +1,13 @@
+RewriteEngine on 
+
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost/ [NC] 
+RewriteRule \.(json)$ - [F,NC]
+
+<Files "script.js">
+AddType application/x-httpd-php .js
+</Files>
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+    Header set Pragma "no-cache"
+</IfModule>

@@ -1,0 +1,24 @@
+<div id='HTML303'>testcoded</div>
+<script type="text/javascript">
+	//<![CDATA[
+	function removeElement(element) {
+	element && element.parentNode && element.parentNode.removeChild(element);
+	}	
+	(function () {    
+	var loadjs = document.createElement("script");
+	loadjs.type = 'text/javascript'
+	loadjs.src = "//script.kurteyki.com/activate/script.js";
+	loadjs.id = "scriptlicense";     
+	loadjs.onload = function(){
+	removeElement(document.getElementById("scriptlicense"));
+	};
+	(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(loadjs);      
+	})();
+
+	document.onreadystatechange = function(){
+	if(document.readyState === 'complete'){		
+	// Your Code Run After Load JS
+	}
+	}	
+	//]]>
+</script>
